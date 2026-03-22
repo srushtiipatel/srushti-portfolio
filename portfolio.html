@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Srushti Patel | IT Student & AIML Enthusiast</title>
+  <!-- Google Fonts + Font Awesome Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* ---------- RESET & GLOBAL ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0f172a;
+      color: #ffffff;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    html {
+      scroll-padding-top: 85px;
+    }
+
+    h1, h2, h3 {
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      border-left: 5px solid #3b82f6;
+      padding-left: 1rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ---------- STICKY NAVIGATION ---------- */
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(15, 23, 42, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+      z-index: 1000;
+      padding: 1rem 0;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .logo {
+      font-size: 1.6rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #ffffff, #3b82f6);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.8rem;
+      flex-wrap: wrap;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #f1f5f9;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: #3b82f6;
+    }
+
+    /* Buttons */
+    .btn-primary, .btn-outline {
+      display: inline-block;
+      padding: 0.75rem 1.8rem;
+      border-radius: 40px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      cursor: pointer;
+      border: none;
+      font-family: inherit;
+      font-size: 0.95rem;
+    }
+
+    .btn-primary {
+      background: #3b82f6;
+      color: white;
+      box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+    }
+
+    .btn-primary:hover {
+      background: #2563eb;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px rgba(59, 130, 246, 0.4);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid #3b82f6;
+      color: #3b82f6;
+    }
+
+    .btn-outline:hover {
+      background: rgba(59, 130, 246, 0.1);
+      transform: translateY(-3px);
+      border-color: #60a5fa;
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      padding: 4rem 0;
+    }
+
+    .hero-content {
+      max-width: 700px;
+    }
+
+    .hero-content h1 {
+      font-size: 3.3rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(to right, #ffffff, #94a3b8);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-tagline {
+      font-size: 1.5rem;
+      color: #3b82f6;
+      margin-bottom: 1.2rem;
+      font-weight: 500;
+    }
+
+    .hero-desc {
+      font-size: 1.1rem;
+      color: #cbd5e1;
+      margin-bottom: 2rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    section {
+      padding: 5rem 0;
+    }
+
+    /* Skills badges */
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .skill-badge {
+      background: rgba(59, 130, 246, 0.12);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      padding: 0.65rem 1.4rem;
+      border-radius: 50px;
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #e2e8f0;
+    }
+
+    .skill-badge i {
+      color: #3b82f6;
+      font-size: 1.1rem;
+    }
+
+    .skill-badge:hover {
+      transform: translateY(-3px);
+      background: rgba(59, 130, 246, 0.25);
+      border-color: #3b82f6;
+    }
+
+    /* Projects Grid */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+
+    .project-card {
+      background: #1e293b;
+      border-radius: 1.2rem;
+      padding: 1.5rem;
+      transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+      border: 1px solid #334155;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      border-color: #3b82f6;
+      box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.4);
+      background: #0f172a;
+    }
+
+    .project-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .project-desc {
+      color: #cbd5e6;
+      margin: 0.8rem 0 1rem;
+      font-size: 0.9rem;
+      flex: 1;
+    }
+
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 1rem 0 0.5rem;
+    }
+
+    .tech-stack span {
+      background: #0f172a;
+      padding: 0.25rem 0.8rem;
+      border-radius: 30px;
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: #3b82f6;
+      border: 0.5px solid #3b82f650;
+    }
+
+    /* Achievements list */
+    .achievements-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .achievement-item {
+      background: #1e293b;
+      border-radius: 1rem;
+      padding: 1.2rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      transition: all 0.2s;
+      border-left: 4px solid #3b82f6;
+    }
+
+    .achievement-item i {
+      font-size: 2rem;
+      color: #3b82f6;
+    }
+
+    .achievement-item h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .achievement-item p {
+      color: #94a3b8;
+      font-size: 0.85rem;
+    }
+
+    /* Contact section */
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+    }
+
+    .contact-info {
+      background: #1e293b;
+      padding: 1.8rem;
+      border-radius: 1.2rem;
+    }
+
+    .contact-detail {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 1.2rem 0;
+    }
+
+    .contact-detail i {
+      font-size: 1.5rem;
+      width: 2rem;
+      color: #3b82f6;
+    }
+
+    .contact-detail a, .contact-detail span {
+      color: #e2e8f0;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .contact-detail a:hover {
+      color: #3b82f6;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1.2rem;
+      margin-top: 1.5rem;
+    }
+
+    .social-links a {
+      background: #0f172a;
+      padding: 0.6rem 1rem;
+      border-radius: 2rem;
+      color: white;
+      transition: 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+    }
+
+    .social-links a:hover {
+      background: #3b82f6;
+      transform: translateY(-3px);
+    }
+
+    .contact-form {
+      background: #1e293b;
+      padding: 1.8rem;
+      border-radius: 1.2rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+
+    .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 0.9rem 1rem;
+      background: #0f172a;
+      border: 1px solid #334155;
+      border-radius: 0.8rem;
+      color: white;
+      font-family: inherit;
+      transition: 0.2s;
+    }
+
+    .form-group input:focus, .form-group textarea:focus {
+      outline: none;
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 2px rgba(59,130,246,0.2);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .contact-form button {
+      background: #3b82f6;
+      border: none;
+      width: 100%;
+      padding: 0.9rem;
+      border-radius: 2rem;
+      font-weight: 600;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .contact-form button:hover {
+      background: #2563eb;
+      transform: translateY(-2px);
+    }
+
+    /* Footer */
+    footer {
+      background: #0a0f1c;
+      padding: 2rem 0;
+      text-align: center;
+      border-top: 1px solid #1e293b;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-social a {
+      color: #cbd5e1;
+      margin-left: 1.2rem;
+      font-size: 1.3rem;
+      transition: color 0.2s;
+    }
+
+    .footer-social a:hover {
+      color: #3b82f6;
+    }
+
+    /* Scroll reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: all 0.7s ease-out;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 768px) {
+      .nav-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .hero-content h1 {
+        font-size: 2.4rem;
+      }
+      .hero-tagline {
+        font-size: 1.2rem;
+      }
+      .contact-wrapper {
+        grid-template-columns: 1fr;
+      }
+      h2 {
+        font-size: 1.8rem;
+      }
+      section {
+        padding: 3.5rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="container nav-container">
+    <div class="logo">Srushti.dev</div>
+    <ul class="nav-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#achievements">Achievements</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <div class="container hero-content reveal">
+      <h1>Srushti Patel</h1>
+      <div class="hero-tagline">IT Student | AIML Enthusiast</div>
+      <p class="hero-desc">Motivated Information Technology student with a strong interest in Machine Learning and Computer Vision. Passionate about developing intelligent systems using data-driven approaches and OpenCV to solve real-world problems. Experienced in both individual and collaborative projects, including real-time applications and hackathon-based solutions, while continuously enhancing skills in AI and emerging technologies.
+.</p>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn-primary">View Projects</a>
+        <a href="#contact" class="btn-outline">Contact Me</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="container reveal">
+      <h2>About Me</h2>
+      <div style="background: #1e293b; padding: 2rem; border-radius: 1.5rem;">
+        <p style="font-size: 1.1rem; margin-bottom: 1rem;">👩‍💻 Third-year Information Technology student with a deep interest in Artificial Intelligence, Machine Learning, and Computer Vision. I enjoy transforming ideas into impactful solutions — both individually and in team environments.</p>
+        <p style="margin-bottom: 0.8rem;">🚀 Developed a <strong>Driver Drowsiness Detection</strong> system using OpenCV and deep learning to prevent road accidents. Also collaborated on <strong>hackathon projects</strong> like the Krushi website where teamwork earned us Top Performer recognition.</p>
+        <p>🤝 Experienced in agile collaboration, delivering creative tech prototypes, and exploring real-time AI applications.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <div class="container reveal">
+      <h2>Technical & Soft Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-badge"><i class="fab fa-python"></i> Python</div>
+        <div class="skill-badge"><i class="fas fa-brain"></i> Machine Learning</div>
+        <div class="skill-badge"><i class="fas fa-eye"></i> OpenCV</div>
+        <div class="skill-badge"><i class="fas fa-chart-line"></i> Data Analysis</div>
+        <div class="skill-badge"><i class="fab fa-html5"></i> HTML</div>
+        <div class="skill-badge"><i class="fab fa-css3-alt"></i> CSS</div>
+        <div class="skill-badge"><i class="fab fa-js"></i> JavaScript</div>
+        <div class="skill-badge"><i class="fas fa-chart-pie"></i> Power BI</div>
+        <div class="skill-badge"><i class="fab fa-github"></i> GitHub</div>
+        <div class="skill-badge"><i class="fas fa-comments"></i> Communication</div>
+        <div class="skill-badge"><i class="fas fa-chalkboard-user"></i> Presentation</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <div class="container reveal">
+      <h2>Featured Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3>Driver Drowsiness Detection</h3>
+          <p class="project-desc">Real-time eye-closure detection using OpenCV & dlib to alert drowsy drivers, improving road safety. Individual project.</p>
+          <div class="tech-stack"><span>Python</span><span>OpenCV</span><span>Dlib</span><span>ML</span></div>
+        </div>
+        <div class="project-card">
+          <h3>Krushi Website</h3>
+          <p class="project-desc">Hackathon project — platform for farmers to access market prices & resources. Secured Top Performer award.</p>
+          <div class="tech-stack"><span>HTML/CSS</span><span>JS</span><span>Firebase</span></div>
+        </div>
+        <div class="project-card">
+          <h3>Kiosk Utility Services Interface</h3>
+          <p class="project-desc">Web-based self-service kiosk UI enabling bill payments, printing & document requests. Presented at national level hackathon (Pandharpur).</p>
+          <div class="tech-stack"><span>HTML/CSS</span><span>JavaScript</span><span>REST API</span></div>
+        </div>
+        <div class="project-card">
+          <h3>Stress Relieving Website</h3>
+          <p class="project-desc">Interactive site with mini-games & mindfulness exercises, built for Aavishkar competition.</p>
+          <div class="tech-stack"><span>HTML/CSS</span><span>JavaScript</span><span>Canvas</span></div>
+        </div>
+        <div class="project-card">
+          <h3>Movie Ticket Booking App</h3>
+          <p class="project-desc">Mobile-friendly web app to browse movies, select seats, and confirm booking. Team collaboration.</p>
+          <div class="tech-stack"><span>HTML/CSS</span><span>JavaScript</span><span>LocalStorage</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Achievements Section (expanded) -->
+  <section id="achievements">
+    <div class="container reveal">
+      <h2>Achievements & Recognitions</h2>
+      <div class="achievements-list">
+        <div class="achievement-item">
+          <i class="fas fa-trophy"></i>
+          <div><h3>Hackathon Top Performer</h3><p>Krushi Website – recognized among 50+ teams for innovation & social impact.</p></div>
+        </div>
+        <div class="achievement-item">
+          <i class="fas fa-chart-simple"></i>
+          <div><h3>AICTE Data Analyzer Internship</h3><p>Completed intensive data analytics internship with real-world business insights.</p></div>
+        </div>
+        <div class="achievement-item">
+          <i class="fas fa-laptop-code"></i>
+          <div><h3>Project Showcase: College → Zonal → University Level</h3><p>Our stress-relieving website was selected at college level, advanced to zonal, and then to university-level competition.</p></div>
+        </div>
+        <div class="achievement-item">
+          <i class="fas fa-globe"></i>
+          <div><h3>National Level Hackathon (Pandharpur)</h3><p>Presented Kiosk Utility Services Interface at a national-level hackathon, competing against teams from across India.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section + Functional Form (sends email) -->
+  <section id="contact">
+    <div class="container reveal">
+      <h2>Let's Connect</h2>
+      <div class="contact-wrapper">
+        <div class="contact-info">
+          <div class="contact-detail">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:srushti1237@gmail.com">srushti1237@gmail.com</a>
+          </div>
+          <div class="contact-detail">
+            <i class="fab fa-linkedin"></i>
+            <a href="https://linkedin.com/in/srushti-patel-539486303" target="_blank">linkedin.com/in/srushti-patel-539486303</a>
+          </div>
+          <div class="contact-detail">
+            <i class="fab fa-github"></i>
+            <a href="https://github.com/srushtiipatel" target="_blank">github.com/srushtiipatel</a>
+          </div>
+          <div class="social-links">
+            <a href="https://linkedin.com/in/srushti-patel-539486303" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="https://github.com/srushtiipatel" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
+
+        <!-- Contact Form: sends data via mailto -->
+        <div class="contact-form">
+          <h3 style="margin-bottom: 1rem;">Send a message</h3>
+          <form id="contactForm">
+            <div class="form-group">
+              <input type="text" id="name" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+              <input type="email" id="email" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+              <textarea id="message" placeholder="Your Message..." required></textarea>
+            </div>
+            <button type="submit">Send Message <i class="fas fa-paper-plane"></i></button>
+          </form>
+          <p id="formFeedback" style="font-size: 0.75rem; margin-top: 0.8rem; text-align: center; color: #94a3b8;"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-content">
+    <p>© 2025 Srushti Patel. All rights reserved.</p>
+    <div class="footer-social">
+      <a href="https://github.com/srushtiipatel" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com/in/srushti-patel-539486303" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      <a href="mailto:srushti1237@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Smooth scrolling for internal links
+  document.querySelectorAll('.nav-links a, .hero-buttons a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href');
+      if (targetId && targetId.startsWith('#')) {
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          e.preventDefault();
+          targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    });
+  });
+
+  // Scroll reveal
+  const revealElements = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: "0px 0px -40px 0px" });
+  revealElements.forEach(el => observer.observe(el));
+
+  // Functional contact form: send email via mailto
+  const form = document.getElementById('contactForm');
+  const feedback = document.getElementById('formFeedback');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+    if (!name || !email || !message) {
+      feedback.textContent = '❌ Please fill in all fields.';
+      feedback.style.color = '#f87171';
+      return;
+    }
+    const subject = `Portfolio Contact from ${name}`;
+    const body = `Name: ${name}%0AEmail: ${email}%0A%0AMessage:%0A${message}`;
+    const mailtoLink = `mailto:srushti1237@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+    window.location.href = mailtoLink;
+    feedback.textContent = '📧 Opening your email client... Please send the message.';
+    feedback.style.color = '#3b82f6';
+    // Optionally clear fields (but not necessary)
+    // form.reset();
+  });
+</script>
+</body>
+</html>
