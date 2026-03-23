@@ -488,8 +488,7 @@
     <div class="container hero-content reveal">
       <h1>Srushti Patel</h1>
       <div class="hero-tagline">IT Student | AIML Enthusiast</div>
-      <p class="hero-desc">Motivated Information Technology student with a strong interest in Machine Learning and Computer Vision. Passionate about developing intelligent systems using data-driven approaches and OpenCV to solve real-world problems. Experienced in both individual and collaborative projects, including real-time applications and hackathon-based solutions, while continuously enhancing skills in AI and emerging technologies.
-.</p>
+      <p class="hero-desc">Passionate about Machine Learning, Computer Vision & OpenCV. I love building intelligent systems that solve real-world problems — from drowsiness detection and Hands-gesture volume control to hackathon-driven platforms.</p>
       <div class="hero-buttons">
         <a href="#projects" class="btn-primary">View Projects</a>
         <a href="#contact" class="btn-outline">Contact Me</a>
@@ -517,6 +516,7 @@
         <div class="skill-badge"><i class="fab fa-python"></i> Python</div>
         <div class="skill-badge"><i class="fas fa-brain"></i> Machine Learning</div>
         <div class="skill-badge"><i class="fas fa-eye"></i> OpenCV</div>
+        <div class="skill-badge"><i class="fas fa-hand-peace"></i> MediaPipe</div>
         <div class="skill-badge"><i class="fas fa-chart-line"></i> Data Analysis</div>
         <div class="skill-badge"><i class="fab fa-html5"></i> HTML</div>
         <div class="skill-badge"><i class="fab fa-css3-alt"></i> CSS</div>
@@ -529,7 +529,7 @@
     </div>
   </section>
 
-  <!-- Projects Section -->
+  <!-- Projects Section (now with 6 projects) -->
   <section id="projects">
     <div class="container reveal">
       <h2>Featured Projects</h2>
@@ -538,6 +538,11 @@
           <h3>Driver Drowsiness Detection</h3>
           <p class="project-desc">Real-time eye-closure detection using OpenCV & dlib to alert drowsy drivers, improving road safety. Individual project.</p>
           <div class="tech-stack"><span>Python</span><span>OpenCV</span><span>Dlib</span><span>ML</span></div>
+        </div>
+        <div class="project-card">
+          <h3>Hand Gesture Volume Control</h3>
+          <p class="project-desc">Control system volume using hand gestures captured via webcam. Utilizes MediaPipe for hand tracking and Pycaw for audio control.</p>
+          <div class="tech-stack"><span>Python</span><span>OpenCV</span><span>MediaPipe</span><span>Pycaw</span></div>
         </div>
         <div class="project-card">
           <h3>Krushi Website</h3>
@@ -563,7 +568,7 @@
     </div>
   </section>
 
-  <!-- Achievements Section (expanded) -->
+  <!-- Achievements Section -->
   <section id="achievements">
     <div class="container reveal">
       <h2>Achievements & Recognitions</h2>
@@ -588,7 +593,7 @@
     </div>
   </section>
 
-  <!-- Contact Section + Functional Form (sends email) -->
+  <!-- Contact Section + Functional Form -->
   <section id="contact">
     <div class="container reveal">
       <h2>Let's Connect</h2>
@@ -612,7 +617,6 @@
           </div>
         </div>
 
-        <!-- Contact Form: sends data via mailto -->
         <div class="contact-form">
           <h3 style="margin-bottom: 1rem;">Send a message</h3>
           <form id="contactForm">
@@ -691,8 +695,6 @@
     window.location.href = mailtoLink;
     feedback.textContent = '📧 Opening your email client... Please send the message.';
     feedback.style.color = '#3b82f6';
-    // Optionally clear fields (but not necessary)
-    // form.reset();
   });
 </script>
 </body>
